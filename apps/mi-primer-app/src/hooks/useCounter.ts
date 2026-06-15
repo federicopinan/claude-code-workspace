@@ -38,9 +38,12 @@ export function useCounter({
     setCount(initialValue)
   }, [initialValue])
 
-  const set = useCallback((value: number) => {
-    setCount(Math.max(min, Math.min(value, max)))
-  }, [min, max])
+  const set = useCallback(
+    (value: number) => {
+      setCount(Math.max(min, Math.min(value, max)))
+    },
+    [min, max],
+  )
 
   return { count, increment, decrement, reset, set }
 }

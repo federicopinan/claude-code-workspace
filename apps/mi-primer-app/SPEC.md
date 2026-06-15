@@ -5,6 +5,7 @@ Aplicación de ejemplo que demuestra la estructura y convenciones del workspace.
 ## Propósito
 
 Esta app sirve como referencia para nuevas aplicaciones. Muestra:
+
 - Estructura de carpetas (src/components, src/hooks, src/lib, src/types)
 - Patrones de componentes React con TypeScript
 - Hooks custom y estado local
@@ -21,6 +22,7 @@ Esta app sirve como referencia para nuevas aplicaciones. Muestra:
 ## Convenciones
 
 Ver `referencia/codigo/README.md` para patrones de:
+
 - Clean Architecture
 - Atomic Design
 - Container/Presentational pattern
@@ -43,6 +45,7 @@ apps/mi-primer-app/
 ## SDD Workflow
 
 Esta app fue creada siguiendo el workflow SDD:
+
 1. **Explore** → Investigación de requisitos
 2. **Propose** → Propuesta arquitectónica
 3. **Spec** → Especificación de comportamiento

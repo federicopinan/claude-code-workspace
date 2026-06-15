@@ -57,6 +57,12 @@ Plantilla reusable para proyectos SaaS y aplicaciones. Diseñada para desarrollo
 
 | Comando | Descripción |
 |---------|-------------|
+| `npm run setup` | Instala dependencias y valida el template |
+| `npm run check` | Ejecuta validación estructural, lint/typecheck y tests |
+| `npm run check:template` | Verifica estructura, archivos críticos y branding limpio |
+| `npm run format:check` | Verifica formato con Prettier |
+| `npm run format` | Formatea el ejemplo con Prettier |
+| `npm run new:app -- [nombre]` | Crea una app desde `apps/mi-primer-app` |
 | `/iniciar` | Inicializar sesión con contexto |
 | `/crear-plan [pedido]` | Crear plan de implementación detallado |
 | `/implementar [ruta]` | Ejecutar plan existente |
@@ -102,13 +108,15 @@ proposal → specs → design → tasks → apply → verify → archive
 - `/sdd-continue [nombre]` → continuar siguiente fase
 - `/sdd-ff [nombre]` → automático sin pausas
 
+Ejemplo completo de artefactos SDD: `docs/sdd-example/`.
+
 ---
 
 ## Convenciones de Código
 
 ### TypeScript
 - Strict mode habilitado
--Interfaces sobre types para extensibilidad
+- Interfaces sobre types para extensibilidad
 - `PascalCase` para componentes y clases
 - `camelCase` para funciones y variables
 - `kebab-case` para archivos y carpetas

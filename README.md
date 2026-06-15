@@ -1,6 +1,6 @@
-# Workspace Template — Nexum SaaS Development Environment
+# Workspace Template — Development Environment
 
-Template para desarrollo sistemático de aplicaciones SaaS usando Spec-Driven Development (SDD).
+Template reutilizable para desarrollar aplicaciones con Claude Code, contexto persistente y Spec-Driven Development (SDD).
 
 ## Empezar
 
@@ -9,8 +9,8 @@ Template para desarrollo sistemático de aplicaciones SaaS usando Spec-Driven De
 git clone https://github.com/federicopinan/claude-code-workspace.git mi-proyecto
 cd mi-proyecto
 
-# Instalar dependencias
-npm install
+# Instalar dependencias y validar estructura
+npm run setup
 
 # Iniciar Claude con contexto
 claude --dangerously-skip-permissions /iniciar
@@ -28,22 +28,33 @@ referencia/        # Patrones de referencia
 contexto/          # Contexto del proyecto actual
 skills/            # Skills disponibles para este workspace
 infraestructura/   # Terraform, Docker, CI/CD
-planas/            # Planes de implementación
+planes/            # Planes de implementación
 salidas/           # Entregables y reportes
 scripts/           # Automatización
 ```
 
+## Comandos del Template
+
+| Comando | Qué valida o ejecuta |
+|---------|----------------------|
+| `npm run setup` | Instala dependencias y valida la estructura del template |
+| `npm run check` | Ejecuta validación estructural, lint/typecheck y tests |
+| `npm run check:template` | Verifica archivos críticos, carpetas esperadas y branding limpio |
+| `npm run format:check` | Verifica formato con Prettier |
+| `npm run format` | Formatea el ejemplo con Prettier |
+| `npm run new:app -- mi-app` | Crea una app nueva desde `apps/mi-primer-app` |
+
 ## Stack Sugerido
 
-| Capa | Tecnología |
-|------|------------|
+| Capa     | Tecnología                                   |
+| -------- | -------------------------------------------- |
 | Frontend | Next.js 16 + React 19 + shadcn/ui + Tailwind |
-| Estado | Zustand (client) + React Query (server) |
-| Backend | Next.js API Routes / Hono |
-| ORM | Drizzle / Prisma |
-| Auth | Clerk / NextAuth |
-| DB | PostgreSQL (Vercel Postgres / Neon) |
-| Deploy | Vercel |
+| Estado   | Zustand (client) + React Query (server)      |
+| Backend  | Next.js API Routes / Hono                    |
+| ORM      | Drizzle / Prisma                             |
+| Auth     | Clerk / NextAuth                             |
+| DB       | PostgreSQL (Vercel Postgres / Neon)          |
+| Deploy   | Vercel                                       |
 
 ## Workflow SDD
 
@@ -57,12 +68,15 @@ Para iniciar un nuevo cambio:
 /sdd-new mi-nuevo-feature
 ```
 
+Ver un ejemplo completo en [`docs/sdd-example/`](./docs/sdd-example/).
+
 ## Convenciones
 
 - TypeScript strict mode
 - Conventional commits (`feat:`, `fix:`, `docs:`, etc.)
 - Tests cerca del código: `Component.test.tsx`
 - Coverage mínimo: 80%
+- Validar el template con `npm run check` antes de publicarlo
 
 ## Recursos
 

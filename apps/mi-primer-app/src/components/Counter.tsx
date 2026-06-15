@@ -1,3 +1,5 @@
+'use client'
+
 import { useCounter } from '@/hooks/useCounter'
 import { useState } from 'react'
 
@@ -20,7 +22,11 @@ function CounterDisplay({ count, label = 'Count' }: CounterDisplayProps) {
 // Container component - handles logic and state
 // Composes the presentational component with hooks
 export function CounterContainer() {
-  const { count, increment, decrement, reset } = useCounter({ initialValue: 0, min: 0, max: 100 })
+  const { count, increment, decrement, reset } = useCounter({
+    initialValue: 0,
+    min: 0,
+    max: 100,
+  })
   const [showDebug, setShowDebug] = useState(false)
 
   return (
